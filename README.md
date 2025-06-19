@@ -102,3 +102,6 @@
 
 - Googleマップの表示はGoogle Maps Javascript API
 - 検索機能のオートコンプリートはStimulus Autocomplete
+
+## 画面遷移図
+https://www.figma.com/design/2cx91g6sFF7kfFZ02ecX9g/LocaMap?node-id=0-1&t=qFrOLkBdo9D9wwnd-1
