@@ -98,7 +98,16 @@
 
 ## 機能の実装方針予定
 
-- 検索機能のオートコンプリートはStimulus Autocomplete
+| 種別 | 技術 |
+| ------ | ------ |
+| 開発環境 | Docker |
+| フロントエンド | Rails7.0.4.3 / Hotwire / TailwindCSS / daisyUI |
+| バックエンド | rails7.0.4.3 / ruby3.2.2 |
+| Web API | Google maps Javascript API | 
+| インフラ | Render / AWS S3 |
+| データベース | PostgreSQL |
+| バージョン管理 | Git / Github |
+| その他 | devise(認証) / Carrierwave(画像アップロード) / ransack(検索) / kaminari(ページネーション) / Stimulus Autocomplete(検索のオートコンプリート) / sorcery(パスワードリセット) | 
 
 ## 画面遷移図
 
