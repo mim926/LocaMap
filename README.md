@@ -112,3 +112,6 @@
 ## 画面遷移図
 
 https://www.figma.com/design/2cx91g6sFF7kfFZ02ecX9g/LocaMap?node-id=0-1&t=qFrOLkBdo9D9wwnd-1
+
+## ER図
+https://drive.google.com/file/d/18ShpAe-WO11sSQJl2AL3AoY9VXs21Tb9/view?usp=sharing
