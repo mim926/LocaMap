@@ -1,22 +1,34 @@
-<div class="hero bg-base-200 min-h-screen">
+<div class="hero min-h-screen bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-bold">Login</h1>
+      <h1 class="text-5xl font-bold mb-6">ログイン</h1>
     </div>
-    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+
+    <div class="card w-full max-w-sm shadow-2xl bg-base-100">
       <div class="card-body">
-        <fieldset class="fieldset">
-          <label class="label">Email</label>
-          <input type="email" class="input" placeholder="Email" />
-          <label class="label">Password</label>
-          <input type="password" class="input" placeholder="Password" />
-          <label class="label">Password_confirmation</label>
-          <input type="password_confirmation" class="input" placeholder="Password_confirmation" />
+        <%= form_with(scope: :user, url: user_session_path, local: true, class: "space-y-4") do |f| %>
+          <div>
+            <label class="label">
+              <span class="label-text">メールアドレス</span>
+            </label>
+            <%= f.email_field :email, class: "input input-bordered w-full", required: true, autofocus: true %>
+          </div>
 
-          <button class="btn btn-neutral mt-4">Login</button>
-          <div><a class="link link-hover">Forgot password?</a></div>
+          <div>
+            <label class="label">
+              <span class="label-text">パスワード</span>
+            </label>
+            <%= f.password_field :password, class: "input input-bordered w-full", required: true %>
+          </div>
 
-        </fieldset>
+          <div class="form-control mt-6">
+            <%= f.submit "ログイン", class: "btn btn-neutral w-full" %>
+          </div>
+        <% end %>
+
+        <div class="mt-4 text-center">
+          <%= link_to "アカウントをお持ちでない方はこちら", new_user_registration_path, class: "link link-hover" %>
+        </div>
       </div>
     </div>
   </div>

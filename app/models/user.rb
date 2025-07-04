@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :prefecture, optional: true
+
+  validates :name, presence: true, length: { maximum: 255 }
+  validates :email, presence: true, uniqueness: true
 end

@@ -1,0 +1,14 @@
+<div class="navbar bg-base-100 shadow-sm px-4 flex justify-between items-center">
+  <!-- 左側：ロゴ -->
+  <div class="flex-1">
+    <%= link_to 'LocaMap', root_path, class: 'btn btn-ghost normal-case text-xl' %>
+  </div>
+
+  <!-- 右側：条件付きで表示 -->
+  <% unless devise_controller? && action_name == 'new' && (controller_name == 'sessions' || controller_name == 'registrations') %>
+    <div class="flex-none">
+      <%= link_to 'ユーザー登録', new_user_registration_path, class: 'btn btn-primary mr-2' %>
+      <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-outline' %>
+    </div>
+  <% end %>
+</div>
