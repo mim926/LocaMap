@@ -20,7 +20,7 @@ class Users::SessionsController < Devise::SessionsController
 
   protected
 
-  #ログイン後のリダイレクト先をトップページに指定
+  # ログイン後のリダイレクト先をトップページに指定
   def after_sign_in_path_for(resource)
     root_path
   end
