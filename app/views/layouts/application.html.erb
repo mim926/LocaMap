@@ -12,7 +12,15 @@
   </head>
 
   <body class="bg-base-100 text-base-content min-h-screen">
-    <%= render 'shared/header' %>
+    <% if user_signed_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>
+
+    <% flash.each do |key, msg| %>
+      <div class="alert alert-<%= key %>"><%= msg %></div>
+    <% end %>
 
     <main class="px-4 pt-24 max-w-7xl mx-auto">
       <%= yield %>
