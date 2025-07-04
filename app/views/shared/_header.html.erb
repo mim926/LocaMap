@@ -6,11 +6,8 @@
 
   <!-- 右側：条件分岐による動的ナビ -->
   <div class="flex-none">
-    <!-- ユーザー登録ページ：ヘッダー右側部分は非表示 -->
-    <% if controller.controller_path == 'users/registrations' && action_name == 'new' %>
-
     <% elsif user_signed_in? %>
-      <!-- ログイン後（仮） -->
+      <!-- ログイン後 -->
       <ul class="menu menu-horizontal px-1">
         <li><%= link_to '新規投稿', '#', class: 'btn btn-ghost' %></li>
         <li>
