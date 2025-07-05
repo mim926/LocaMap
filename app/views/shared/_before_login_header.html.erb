@@ -7,8 +7,8 @@
   <!-- 右側：条件付きで表示 -->
   <% unless devise_controller? && action_name == 'new' && (controller_name == 'sessions' || controller_name == 'registrations') %>
     <div class="flex-none">
-      <%= link_to 'ユーザー登録', new_user_registration_path, class: 'btn btn-primary mr-2' %>
-      <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-outline' %>
+      <%= link_to t('header.sign_up'), new_user_registration_path, class: 'btn btn-primary mr-2' %>
+      <%= link_to t('header.login'), new_user_session_path, class: 'btn btn-outline' %>
     </div>
   <% end %>
 </div>
