@@ -3,9 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  belongs_to :prefecture, optional: true
-
+  
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true
+  validates :prefecture_id, presence: true
+
+  belongs_to :prefecture
+
+  has_many :posts, dependent: :destroy
 end
