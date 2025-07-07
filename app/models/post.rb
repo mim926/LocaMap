@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 255 }
   validates :description, presence: true, length: { maximum: 65_535 }
-  validates :prefecture_id, presence:true
+  validates :prefecture_id, presence: true
   validate :local_user_only
 
   belongs_to :user
