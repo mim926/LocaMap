@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   }
 
   get "home/index"
-  get "posts/index"
+
+  resources :posts, only: %i[index]
 end

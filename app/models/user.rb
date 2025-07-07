@@ -4,8 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :prefecture, optional: true
-
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true
+  validates :prefecture_id, presence: true
+
+  belongs_to :prefecture
+
+  has_many :posts, dependent: :destroy
 end
