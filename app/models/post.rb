@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 255 }
   validates :description, presence: true, length: { maximum: 65_535 }
   validates :prefecture_id, presence:true
-  validates :local_user_only
+  validate :local_user_only
 
   belongs_to :user
   belongs_to :prefecture
@@ -17,4 +17,5 @@ class Post < ApplicationRecord
     if user.prefecture_id != prefecture_id
       errors.add(:base, "地元民のみ投稿可能です")
     end
+  end
 end
