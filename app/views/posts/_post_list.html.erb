@@ -5,7 +5,7 @@
         <% if post.image.present? %>
           <figure><%= image_tag post.image.url, class: "w-full h-48 object-cover" %></figure>
         <% else %>
-          <figure><%= image_tag "noimage.png", class: "w-full h-48 object-cover" %></figure>
+          <figure><%= image_tag asset_path('noimage.png'), class: "w-full h-48 object-cover" %></figure>
         <% end %>
         <div class="card-body">
           <h2 class="card-title text-lg"><%= post.title %></h2>
@@ -19,6 +19,6 @@
       </div>
     <% end %>
   </div>
-  <% else %>
+<% else %>
   <p class="text-gray-500">まだ投稿がありません。</p>
 <% end %>

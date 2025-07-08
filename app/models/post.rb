@@ -8,6 +8,8 @@ class Post < ApplicationRecord
   belongs_to :prefecture
   belongs_to :category
 
+  mount_uploader :image, PostImageUploader
+
   private
 
   # 地元民限定しか投稿できないように設定
