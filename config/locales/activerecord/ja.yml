@@ -2,10 +2,17 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      post: 投稿
     attributes:
       user:
+        name: ユーザー名
+        prefecture_id: 出身都道府県名
         email: メールアドレス
-        last_name: 姓
-        first_name: 名
         password: パスワード
         password_confirmation: パスワード確認
+      post:
+        title: タイトル
+        prefecture_id: 都道府県名
+        category_id: カテゴリー
+        address: 住所
+        description: コメント
