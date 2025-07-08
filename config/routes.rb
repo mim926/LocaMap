@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   get "home/index"
 
-  resources :posts, only: %i[index new]
+  resources :posts, only: %i[index new create]
 end
