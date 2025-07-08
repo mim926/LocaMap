@@ -1,30 +1,39 @@
 ja:
+  defaults:
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
   helpers:
     submit:
       create: 登録
       submit: 保存
       update: 更新
-    label:
-      name: ユーザー名
-      email: メールアドレス
-      prefecture: 出身都道府県名
-      password: パスワード
-      password_confirmation: パスワード確認
     placeholder:
       name: ユーザー名を入力
       select_prefecture: 都道府県を選択
+      select_category: カテゴリーを選択
       email: メールアドレスを入力
       password: パスワードを入力
       password_confirmation: もう一度パスワードを入力
+      title: タイトルを入力
+      address: 住所を入力
+      description: |
+        コメントを入力
+
+        推しポイントや、観光に訪れる人へのアドバイスなども是非教えてください
+        例：行列になることが多いので予約必須！
   header:
     sign_up: ユーザー登録
     login: ログイン
     logout: ログアウト
-    board: 掲示板
-    board_index: 掲示板一覧
-    create_board: 新規投稿
+    post: 投稿
+    post_index: 投稿一覧
+    create_post: 新規投稿
     bookmark_index: ブックマーク一覧
     profile: プロフィール
+  post:
+    new:
+      title: 投稿作成
   devise:
     sessions:
       new:
