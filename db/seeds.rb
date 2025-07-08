@@ -20,4 +20,3 @@ end
 %w[グルメ お土産 観光 その他].each do |name|
   Category.find_or_create_by!(name: name)
 end
-
