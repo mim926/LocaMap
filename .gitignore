@@ -42,4 +42,4 @@ public/uploads/
 /node_modules
 
 .DS_Store
-/vendor/bundle
+/vendor/bundlegit-secrets/
