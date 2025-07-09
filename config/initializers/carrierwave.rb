@@ -8,7 +8,7 @@ CarrierWave.configure do |config|
   }
   config.fog_directory  = ENV['AWS_S3_BUCKET']
   config.storage        = :fog
-  config.fog_public     = false
+  config.fog_public     = true
 
   config.fog_attributes = {}
 end

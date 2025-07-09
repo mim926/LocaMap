@@ -13,6 +13,7 @@ amazon:
   bucket: locamap-images-bucket
   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  path: ':class/:id/:filename'
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
