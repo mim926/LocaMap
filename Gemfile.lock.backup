@@ -410,12 +410,12 @@ DEPENDENCIES
   bootsnap
   brakeman
   capybara
-  carrierwave
+  carrierwave (= 2.2.2)
   debug
   devise
   devise-i18n
   dotenv-rails
-  fog-aws
+  fog-aws (~> 3.13)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
