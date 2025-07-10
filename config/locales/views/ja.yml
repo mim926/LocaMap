@@ -33,9 +33,11 @@ ja:
     create_post: 新規投稿
     bookmark_index: ブックマーク一覧
     profile: プロフィール
-  post:
+  posts:
     new:
       title: 投稿作成
+    show:
+      title: 投稿詳細
   devise:
     sessions:
       new:
