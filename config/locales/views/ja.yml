@@ -12,9 +12,12 @@ ja:
       require_login: ログインしてください
   helpers:
     submit:
-      create: 投稿
-      submit: 保存
-      update: 更新
+      user:
+        create: 登録
+      post:
+        create: 投稿
+        submit: 保存
+        update: 更新
     placeholder:
       name: ユーザー名を入力
       select_prefecture: 都道府県を選択

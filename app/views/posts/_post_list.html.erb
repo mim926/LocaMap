@@ -11,10 +11,9 @@
           <h2 class="card-title text-lg">
             <%= link_to post.title, post_path(post), class: "hover:underline text-primary" %>
           </h2>
-          <p><%= truncate(post.description, length: 50) %></p>
           <div class="text-sm text-gray-500 mt-2">
-            <p>都道府県：<%= post.prefecture.name %></p>
-            <p>カテゴリ：<%= post.category.name %></p>
+            <p><%= post.prefecture.name %></p>
+            <p><%= post.category.name %></p>
             <p>投稿者：<%= post.user.name %></p>
           </div>
         </div>
