@@ -17,7 +17,7 @@
           </ul>
 
           <div class="flex justify-end space-x-2 mt-4">
-            <%= link_to "#", id: "button-edit-#{@post.id}", class: "btn btn-sm btn-outline btn-primary" do %>
+            <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}", class: "btn btn-sm btn-outline btn-primary" do %>
               <i class="bi bi-pencil-fill"></i>
             <% end %>
 
