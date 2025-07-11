@@ -15,6 +15,13 @@
           </div>
 
           <div>
+            <%= f.label :prefecture_id, class: "label" %>
+            <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name,
+              { prompt: t('helpers.placeholder.select_prefecture') },
+              { class: "select select-bordered w-full" } %>
+          </div>
+
+          <div>
             <%= f.label :email, class: "label" %>
             <%= f.email_field :email, class: "input input-bordered w-full", placeholder: t('helpers.placeholder.email') %>
           </div>
