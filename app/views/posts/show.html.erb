@@ -1,6 +1,6 @@
 <div class="container mx-auto pt-10 px-4">
   <div class="mb-6 max-w-4xl mx-auto">
-    <h1 class="text-3xl font-bold mb-4"><%= t('.title') %></h1>
+    <h1 class="text-2xl font-bold mb-4"><%= t('.title') %></h1>
 
     <article class="card bg-base-100 shadow-md p-6">
       <div class="flex flex-col md:flex-row gap-4">
@@ -14,22 +14,30 @@
           <ul class="flex flex-wrap gap-2 text-sm text-gray-500 mt-1">
             <li><%= "by #{@post.user.name}" %></li>
             <li><%= l @post.created_at, format: :long %></li>
+            <li><%= @post.category.name %></li>
+            <li><%= @post.prefecture.name %></li>
           </ul>
 
-          <div class="flex justify-end space-x-2 mt-4">
-            <%= link_to "#", id: "button-edit-#{@post.id}", class: "btn btn-sm btn-outline btn-primary" do %>
-              <i class="bi bi-pencil-fill"></i>
-            <% end %>
+          <% if @post.user == current_user %>
+            <div class="flex justify-end space-x-2 mt-4">
+              <%= link_to edit_post_path(@post), id: "button-edit-#{@post.id}", class: "btn btn-sm btn-outline btn-primary" do %>
+                <i class="bi bi-pencil-fill"></i>
+              <% end %>
 
-            <%= link_to "#", id: "button-delete-#{@post.id}", class: "btn btn-sm btn-outline btn-error" do %>
-              <i class="bi bi-trash-fill"></i>
-            <% end %>
-          </div>
+              <%= link_to "#", id: "button-delete-#{@post.id}", class: "btn btn-sm btn-outline btn-error" do %>
+                <i class="bi bi-trash-fill"></i>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
 
       <div class="mt-4 prose">
         <%= simple_format(@post.description) %>
+        <ul class="flex flex-wrap gap-2 text-sm text-gray-500 mt-1">
+          <li><%= @post.address %></li>
+        </ul>
+
       </div>
     </article>
   </div>

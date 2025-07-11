@@ -1,0 +1,45 @@
+<%= form_with model: @post, class: "space-y-6", html: { multipart: true } do |f| %>
+  <div>
+    <%= f.label :title, class: "label font-medium" %>
+    <%= f.text_field :title, class: "input input-bordered w-full", placeholder: t('helpers.placeholder.title') %>
+  </div>
+
+  <div class="form-control mb-4">
+    <label class="label font-medium">
+      <span class="label-text"><%= t("helpers.label.prefecture_id") %></span>
+    </label>
+      
+    <input
+      type="text"
+      class="input input-bordered w-full bg-gray-100 cursor-not-allowed"
+      value="<%= current_user.prefecture.name %>"
+      disabled
+    >
+    <%= f.hidden_field :prefecture_id, value: current_user.prefecture_id %>
+  </div>
+
+  <div>
+    <%= f.label :category_id, class: "label font-medium" %>
+    <%= f.collection_select :category_id, @categories, :id, :name,
+      { prompt: t('helpers.placeholder.select_category') },
+      { class: "select select-bordered w-full" } %>
+  </div>
+
+<div>
+    <%= f.label :address, class: "label font-medium" %>
+    <%= f.text_field :address, class: "input input-bordered w-full", placeholder: t('helpers.placeholder.address') %>
+</div>
+
+<div>
+    <%= f.label :description, class: "label font-medium" %>
+    <%= f.text_area :description, rows: 10, class: "textarea textarea-bordered w-full", placeholder: t('helpers.placeholder.description') %>
+</div>
+
+<div>
+    <%= f.label :image, class: "label font-medium" %>
+    <%= f.file_field :image, class: "file-input file-input-bordered w-full", accept: "image/*" %>
+    <%= f.hidden_field :image_cache %>
+</div>
+
+  <%= f.submit nil, class: "btn btn-primary" %>
+<% end %>
