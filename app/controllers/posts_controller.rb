@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_form_collections, only: [:new, :edit, :create, :update]
+
   def index
     @posts = Post.includes(:user, :category, :prefecture).order(created_at: :desc)
   end
@@ -27,7 +29,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post), success: t("defaults.flash_message.updated", item: Post.model_name.human)
     else
@@ -37,6 +39,11 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_form_collections
+    @categories = Category.all
+    @prefecture = current_user.prefecture
+  end
 
   def post_params
     params.require(:post).permit(:title, :prefecture_id, :category_id, :address, :description, :image, :image_cache)
