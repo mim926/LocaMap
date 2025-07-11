@@ -49,9 +49,9 @@ ja:
     show:
       title: 投稿詳細
     index:
-      title: 掲示板一覧
+      title: 投稿一覧
     edit:
-      title: 掲示板編集
+      title: 投稿編集
   devise:
     sessions:
       new:
