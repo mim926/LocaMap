@@ -14,6 +14,7 @@ ja:
         title: タイトル
         prefecture_id: 都道府県名
         category_id: カテゴリー
+        category: カテゴリー
         address: 住所
         description: コメント
         image: 画像

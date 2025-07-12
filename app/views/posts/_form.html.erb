@@ -1,4 +1,6 @@
 <%= form_with model: @post, class: "space-y-6", html: { multipart: true } do |f| %>
+  <%= render "shared/error_messages", object: @post %>
+
   <div>
     <%= f.label :title, class: "label font-medium" %>
     <%= f.text_field :title, class: "input input-bordered w-full", placeholder: t('helpers.placeholder.title') %>
