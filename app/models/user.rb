@@ -11,4 +11,5 @@ class User < ApplicationRecord
   belongs_to :prefecture
 
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
 end
