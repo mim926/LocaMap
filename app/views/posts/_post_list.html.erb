@@ -15,6 +15,7 @@
             <p><%= post.prefecture.name %></p>
             <p><%= post.category.name %></p>
             <p>投稿者：<%= post.user.name %></p>
+            <%= render 'posts/like_buttons', { post: post } %>
           </div>
         </div>
       </div>

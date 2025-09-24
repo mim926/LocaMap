@@ -33,6 +33,7 @@
           <ul class="flex flex-wrap gap-2 text-sm text-gray-500 mt-1">
             <li><%= "by #{@post.user.name}" %></li>
             <li><%= l @post.created_at, format: :long %></li>
+            <%= render 'posts/like_buttons', { post: @post } %>
           </ul>
         </div>
       </div>

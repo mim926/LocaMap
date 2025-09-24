@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   get "home/index"
 
-  resources :posts, only: %i[index new create show edit update destroy]
+  resources :posts, only: %i[index new create show edit update destroy] do
+    resource :likes, only: %i[create destroy]
+  end
 end
