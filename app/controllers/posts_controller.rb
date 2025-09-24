@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_form_collections, only: [ :new, :edit, :create, :update ]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :likes]
 
   def index
     @posts = Post.includes(:user, :category, :prefecture).order(created_at: :desc)
