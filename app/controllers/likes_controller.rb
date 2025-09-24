@@ -6,7 +6,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:post_id])
+    post = Post.find_by(id: params[:post_id])
     current_user.unlike(post)
     redirect_back fallback_location: posts_path, success: t(".success"), status: :see_other
   end
