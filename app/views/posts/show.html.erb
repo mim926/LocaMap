@@ -40,11 +40,13 @@
 
       <div class="mt-4 prose">
         <%= simple_format(@post.description) %>
-        <ul class="flex flex-wrap gap-2 text-sm text-gray-500 mt-1">
+        <ul class="flex flex-wrap gap-2 text-sm text-gray-500 mt-1 pb-3 border-b">
           <li><%= @post.address %></li>
         </ul>
-
       </div>
+
+      <%= render @comments %>
+      <%= render 'comments/form', comment: @comment, post: @post %>
     </article>
   </div>
 </div>

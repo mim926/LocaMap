@@ -1,0 +1,24 @@
+<div id="comment-form" class="mb-6 flex justify-center">
+  <div class="w-full max-w-2xl">
+    <% if current_user %>
+      <%= form_with model: comment, url: post_comments_path(post), class: "space-y-4" do |f| %>
+        <div>
+          <%= f.label :body, class: "block text-sm font-medium mb-1" %>
+          <%= f.text_area :body,
+                class: "textarea textarea-bordered w-full",
+                rows: 4,
+                placeholder: Comment.human_attribute_name(:body) %>
+        </div>
+        <div>
+          <%= f.submit t("defaults.post"), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="text-sm text-gray-500 text-center mt-2">
+        コメントするには
+        <%= link_to "ログイン", new_user_session_path, class: "link link-primary" %>
+        が必要です。
+      </p>
+    <% end %>
+  </div>
+</div>
