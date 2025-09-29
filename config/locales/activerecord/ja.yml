@@ -3,6 +3,8 @@ ja:
     models:
       user: ユーザー
       post: 投稿
+      like: いいね
+      comment: コメント
     attributes:
       user:
         name: ユーザー名
@@ -18,3 +20,5 @@ ja:
         address: 住所
         description: コメント
         image: 画像
+      comment:
+        body: コメント
