@@ -69,3 +69,5 @@ gem "fog-aws"
 gem "dotenv-rails"
 
 gem "aws-sdk-s3", require: false
+
+gem "ransack", "3.2.1"
