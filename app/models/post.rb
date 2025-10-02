@@ -23,4 +23,13 @@ class Post < ApplicationRecord
       errors.add(:base, "地元民のみ投稿可能です")
     end
   end
+
+  # ransackの設定
+  def self.ransackable_attributes(auth_object = nil)
+     %w[title description]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+     %w[category prefecture]
+  end
 end
