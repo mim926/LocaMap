@@ -71,4 +71,3 @@ gem "dotenv-rails"
 gem "aws-sdk-s3", require: false
 
 gem "ransack", github: "activerecord-hackery/ransack", branch: "main"
-
