@@ -3,4 +3,8 @@ class Category < ApplicationRecord
 
   has_many :posts
   # 投稿はカテゴリー削除後も保持。category_id は NULL のまま残す方針。
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[id name]
+  end
 end

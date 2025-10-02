@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.includes(:user, :prefecture, :category).order(created_at: :desc)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.includes(:user, :prefecture, :category).order(created_at: :desc)
   end
 end
