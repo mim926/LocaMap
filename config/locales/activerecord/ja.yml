@@ -9,6 +9,7 @@ ja:
       user:
         name: ユーザー名
         prefecture_id: 出身都道府県名
+        local_history: 地元歴
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認

@@ -22,6 +22,11 @@
           </div>
 
           <div>
+            <%= f.label :local_history, class: "label" %>
+            <%= f.text_field :local_history, class: "input input-bordered w-full", placeholder: t('helpers.placeholder.local_history') %>
+          </div>
+
+          <div>
             <%= f.label :email, class: "label" %>
             <%= f.email_field :email, class: "input input-bordered w-full", placeholder: t('helpers.placeholder.email') %>
           </div>
