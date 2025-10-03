@@ -22,6 +22,7 @@ ja:
       name: ユーザー名を入力
       select_prefecture: 都道府県を選択
       select_category: カテゴリーを選択
+      local_history: 地元歴を入力
       email: メールアドレスを入力
       password: パスワードを入力
       password_confirmation: もう一度パスワードを入力
