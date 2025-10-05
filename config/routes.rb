@@ -15,4 +15,7 @@ Rails.application.routes.draw do
       get :autocomplete
     end
   end
+
+  resources :users, only: [:show]
+  
 end
