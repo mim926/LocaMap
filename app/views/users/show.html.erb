@@ -1,4 +1,57 @@
-<div>
-  <h1 class="font-bold text-4xl">Users#show</h1>
-  <p>Find me in app/views/users/show.html.erb</p>
-</div>
+<main class="max-w-3xl mx-auto mt-12 p-6 bg-base-100 shadow-xl rounded-2xl border border-base-300">
+  <% if user_signed_in? && @user == current_user %>
+    <h1 class="text-3xl font-bold text-center text-primary mb-6">マイページ</h1>
+  <% else %>
+    <h1 class="text-3xl font-bold text-center text-secondary mb-6">ユーザーページ</h1>
+  <% end %>
+
+  <div class="flex flex-col items-center gap-4">
+    <div class="avatar">
+      <div class="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <%= image_tag @user.icon_image.presence || "local.image.jpeg", alt: @user.name, class: "rounded-full" %>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <h2 class="text-xl font-semibold mb-2"><%= @user.name %></h2>
+      <p class="text-sm text-gray-500 mb-2">
+        出身地：
+        <span class="font-medium text-base-content">
+          <%= @user.prefecture.name %>
+        </span>
+        
+        地元歴：
+        <span class="font-medium text-base-content">
+          <%= @user.local_history.presence || "未登録" %>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <% if user_signed_in? && @user == current_user %>
+    <div class="text-center mt-6">
+      <%= link_to "プロフィールを編集する", edit_user_path(current_user),
+          class: "btn btn-primary btn-wide" %>
+    </div>
+  <% end %>
+
+  <div class="divider my-8"></div>
+
+  <div class="mt-4">
+    <h3 class="text-lg font-bold mb-4">投稿一覧</h3>
+    <% if @user.posts.any? %>
+      <div class="grid grid-cols-1 gap-4">
+        <% @user.posts.each do |post| %>
+          <div class="card bg-base-200 shadow-md hover:shadow-lg transition">
+            <div class="card-body">
+              <h4 class="card-title"><%= link_to post.title, post_path(post) %></h4>
+              <p class="text-sm text-gray-600"><%= truncate(post.description, length: 100) %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-center text-gray-400">まだ投稿がありません。</p>
+    <% end %>
+  </div>
+</main>
