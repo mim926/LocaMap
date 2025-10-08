@@ -11,6 +11,7 @@ ja:
         prefecture_id: 出身都道府県名
         local_history: 地元歴
         email: メールアドレス
+        icon_image: アイコン
         password: パスワード
         password_confirmation: パスワード確認
       post:
