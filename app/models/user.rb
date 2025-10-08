@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   mount_uploader :icon_image, IconImageUploader
-  
+
   def like(post)
     like_posts << post
   end
