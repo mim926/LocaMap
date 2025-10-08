@@ -1,0 +1,30 @@
+<main class="max-w-2xl mx-auto mt-12 p-8 bg-base-100 shadow-xl rounded-2xl border border-base-300">
+  <h1 class="text-3xl font-bold text-center text-primary mb-8">プロフィール編集</h1>
+
+  <%= form_with model: @user, url: user_path, local: true, html: { multipart: true } do |f| %>
+    <div class="form-control mb-6">
+      <label class="label">
+        <span class="label-text font-semibold">名前</span>
+      </label>
+      <%= f.text_field :name, class: "input input-bordered w-full", placeholder: "表示名を入力" %>
+    </div>
+
+    <div class="form-control mb-6">
+      <label class="label">
+        <span class="label-text font-semibold">地元歴</span>
+      </label>
+      <%= f.text_field :local_history, class: "input input-bordered w-full", placeholder: "地元歴を入力" %>
+    </div>
+
+    <div class="form-control mb-6">
+      <%= f.label :icon_image, class: "label font-medium" %>
+      <%= f.file_field :icon_image, class: "file-input file-input-bordered w-full", accept: "image/*" %>
+      <%= f.hidden_field :icon_image_cache %>
+    </div>
+
+    <div class="flex justify-center gap-4 mt-8">
+      <%= f.submit "更新する", class: "btn btn-primary btn-wide" %>
+      <%= link_to "キャンセル", user_path(@user), class: "btn btn-outline btn-wide" %>
+    </div>
+  <% end %>
+</main>

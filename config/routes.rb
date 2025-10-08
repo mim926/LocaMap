@@ -15,4 +15,8 @@ Rails.application.routes.draw do
       get :autocomplete
     end
   end
+
+  resources :users, only: %i[show edit update]
+
+  get "mypage", to: "users#show", as: :mypage
 end
