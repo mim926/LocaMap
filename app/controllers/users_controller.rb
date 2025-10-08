@@ -1,34 +1,32 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [ :mypage, :edit, :update ]
-  before_action :set_user, only: [ :show, :edit, :update ]
+  before_action :authenticate_user!, except: [ :show ]
+  before_action :set_user, only: [ :edit, :update ]
 
   def show
-    @user = current_user
+    if params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
   end
 
   def edit
-    unless @user == current_user
-      redirect_to user_path(@user)
-    end
+    redirect_to mypage_path unless @user == current_user
   end
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(current_user), success: t("defaults.flash_message.updated", item: User.model_name.human)
+      redirect_to mypage_path, success: t("defaults.flash_message.updated", item: User.model_name.human)
     else
       flash.now[:danger] = t("defaults.flash_message.not_updated", item: User.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end
 
-  def mypage
-    redirect_to user_path(current_user)
-  end
-
   private
 
   def set_user
-    @user = User.find(current_user.id)
+    @user = current_user
   end
 
   def user_params

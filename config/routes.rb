@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: %i[show edit update]
-
-  get "mypage", to: "users#show", as: :mypage
+  resources :users, only: %i[show]
+  resource :mypage, only: %i[show edit update], controller: "users"
 end

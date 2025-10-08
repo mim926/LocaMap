@@ -1,7 +1,7 @@
 <main class="max-w-2xl mx-auto mt-12 p-8 bg-base-100 shadow-xl rounded-2xl border border-base-300">
   <h1 class="text-3xl font-bold text-center text-primary mb-8">プロフィール編集</h1>
 
-  <%= form_with model: @user, url: user_path, local: true, html: { multipart: true } do |f| %>
+  <%= form_with model: @user, url: mypage_path, local: true, html: { multipart: true } do |f| %>
     <div class="form-control mb-6">
       <label class="label">
         <span class="label-text font-semibold">名前</span>
@@ -24,7 +24,7 @@
 
     <div class="flex justify-center gap-4 mt-8">
       <%= f.submit "更新する", class: "btn btn-primary btn-wide" %>
-      <%= link_to "キャンセル", user_path(@user), class: "btn btn-outline btn-wide" %>
+      <%= link_to "キャンセル", mypage_path, class: "btn btn-outline btn-wide" %>
     </div>
   <% end %>
 </main>
