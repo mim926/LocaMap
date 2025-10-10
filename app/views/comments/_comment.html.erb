@@ -1,10 +1,8 @@
 <div id="comment-<%= comment.id %>" class="flex items-start space-x-2 p-2 leading-tight border-b">
-  <div class="flex-shrink-0">
-    <%= image_tag "map.japan.png", width: "30", height: "30", class: "rounded-full" %>
+  <div class="flex items-center gap-2">
+    <h3 class="text-xs font-semibold"><%= user_profile_link_with_icon(comment.user) %></h3>
   </div>
-
   <div class="flex-1 max-w-sm">
-    <h3 class="text-xs font-semibold"><%= comment.user.name %></h3>
     <p class="text-xs leading-tight"><%= simple_format(comment.body) %></p>
   </div>
 </div>
