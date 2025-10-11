@@ -39,18 +39,18 @@
   <div class="mt-4">
     <h3 class="text-lg font-bold mb-4">投稿一覧</h3>
     <% if @user.posts.any? %>
-      <div class="grid grid-cols-1 gap-4">
-        <% @user.posts.each do |post| %>
-          <div class="card bg-base-200 shadow-md hover:shadow-lg transition">
-            <div class="card-body">
-              <h4 class="card-title"><%= link_to post.title, post_path(post) %></h4>
-              <p class="text-sm text-gray-600"><%= truncate(post.description, length: 100) %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      <%= render "posts/post_list", posts: @user.posts %>
     <% else %>
       <p class="text-center text-gray-400">まだ投稿がありません。</p>
+    <% end %>
+
+    <% if user_signed_in? && @user == current_user %>
+      <h3 class="text-lg font-bold mb-4">いいね一覧</h3>
+      <% if @user.like_posts.any? %>
+        <%= render "posts/post_list", posts: @user.like_posts %>
+      <% else %>
+        <p class="text-center text-gray-400">まだいいねがありません。</p>
+      <% end %>
     <% end %>
   </div>
 </main>

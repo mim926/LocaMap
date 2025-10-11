@@ -1,6 +1,6 @@
-<% if @posts.any? %>
+<% if posts.any? %>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <% @posts.each do |post| %>
+    <% posts.each do |post| %>
       <div class="card bg-base-100 shadow-xl">
         <% if post.image.present? %>
           <figure><%= image_tag post.image.url, class: "w-full h-48 object-cover" %></figure>
@@ -14,7 +14,7 @@
           <div class="text-sm text-gray-500 mt-2">
             <p><%= post.prefecture.name %></p>
             <p><%= post.category.name %></p>
-            <p>投稿者：<%= post.user.name %></p>
+            <p>投稿者：<%= user_profile_link_with_icon(post.user, class: "text-gray-700 hover:text-primary") %></p>
             <%= render 'posts/like_buttons', { post: post } %>
           </div>
         </div>
