@@ -72,4 +72,4 @@ gem "aws-sdk-s3", require: false
 
 gem "ransack", github: "activerecord-hackery/ransack", branch: "main"
 
-gem "kaminari", "1.2.2"
+gem "kaminari", "~> 1.2"
