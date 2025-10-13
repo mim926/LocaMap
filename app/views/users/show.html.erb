@@ -39,7 +39,8 @@
   <div class="mt-4">
     <h3 class="text-lg font-bold mb-4">投稿一覧</h3>
     <% if @user.posts.any? %>
-      <%= render "posts/post_list", posts: @user.posts %>
+      <%= render "posts/post_list", posts: @posts %>
+      <%= paginate @posts, param_name: :posts_page %>
     <% else %>
       <p class="text-center text-gray-400">まだ投稿がありません。</p>
     <% end %>
@@ -47,7 +48,8 @@
     <% if user_signed_in? && @user == current_user %>
       <h3 class="text-lg font-bold mb-4">いいね一覧</h3>
       <% if @user.like_posts.any? %>
-        <%= render "posts/post_list", posts: @user.like_posts %>
+        <%= render "posts/post_list", posts: @liked_posts %>
+        <%= paginate @liked_posts, param_name: :likes_page %>
       <% else %>
         <p class="text-center text-gray-400">まだいいねがありません。</p>
       <% end %>
