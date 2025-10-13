@@ -68,3 +68,7 @@ ja:
         forgot_your_password: "パスワードをお忘れの方はこちら"
         sign_in_with: "%{provider}でログイン"
         confirmation_instructions: "確認メールを再送信する"
+  views:
+    pagination:
+      previous: 前へ
+      next: 次へ             
