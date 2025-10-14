@@ -1,0 +1,11 @@
+<% app_name = "LocaMap" %>
+<% hashtags = ["地元スポット", app_name, post.prefecture.name] %>
+
+<% share_text = "【#{post.user.name}さんの投稿】\n#{post.title}\n\n地元のおすすめスポットをLocaMapでシェア！\n#{hashtags.map { |tag| "##{tag}" }.join(' ')}\n" %>
+<% share_url = "https://x.com/intent/tweet?url=#{CGI.escape(post_url(post))}&text=#{CGI.escape(share_text)}" %>
+
+<%= link_to share_url, target: "_blank", rel: "noopener", class: "btn btn-circle btn-sm p-2 flex items-center gap-2", title: "Xでシェア" do %>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="size-[1.2em]">
+    <path d="M389.2 48H464L305 224.2 493 464H342.8L233.3 323.5 107.5 464H32L199.5 273.5 18 48H172.2L270.3 178.2 389.2 48ZM362.6 416H403L153.9 92H111.4L362.6 416Z"/>
+  </svg>
+<% end %>

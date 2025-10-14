@@ -34,6 +34,7 @@
             <li><%= user_profile_link_with_icon(@post.user, class: "text-gray-700 hover:text-primary") %></li>
             <li><%= l @post.created_at, format: :long %></li>
             <%= render 'posts/like_buttons', { post: @post } %>
+            <%= render "shared/x_share_buttons", { post: @post } %>
           </ul>
         </div>
       </div>
