@@ -37,4 +37,8 @@
 
   <%= render "shared/search_form", q: @q, url: posts_path %>
   <h2 class="mt-20"><%= render "posts/post_list", posts: @posts %></h2>
+
+  <div class="pagenation mt-4">
+   <%= paginate @posts %>
+  </div>
 </div>

@@ -8,6 +8,12 @@ class UsersController < ApplicationController
     else
       @user = current_user
     end
+
+    @posts = @user.posts.order(created_at: :desc).page(params[:posts_page]).per(3)
+
+    if @user == current_user
+      @liked_posts = @user.like_posts.includes(:user, :prefecture, :category).order(created_at: :desc).page(params[:likes_page]).per(3)
+    end
   end
 
   def edit
