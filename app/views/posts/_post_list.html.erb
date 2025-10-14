@@ -16,6 +16,7 @@
             <p><%= post.category.name %></p>
             <p>投稿者：<%= user_profile_link_with_icon(post.user, class: "text-gray-700 hover:text-primary") %></p>
             <%= render 'posts/like_buttons', { post: post } %>
+            <%= render "shared/x_share_buttons", { post: post } %>
           </div>
         </div>
       </div>
