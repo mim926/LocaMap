@@ -73,3 +73,6 @@ gem "aws-sdk-s3", require: false
 gem "ransack", github: "activerecord-hackery/ransack", branch: "main"
 
 gem "kaminari", "~> 1.2"
+
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"
