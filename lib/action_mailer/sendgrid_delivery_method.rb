@@ -16,7 +16,7 @@ class SendGridDeliveryMethod
     sg = SendGrid::API.new(api_key: @api_key)
     response = sg.client.mail._("send").post(request_body: sg_mail.to_json)
 
-    Rails.logger.info "SendGrid API response: #{response.status_code}
+    Rails.logger.info "SendGrid API response: #{response.status_code}"
     response
   end
 end
