@@ -1,8 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: "locamap.m@gmail.com"
-
-  def test_email(user)
-    @user = user
-    mail(to: @user.email, subject: "テストメールです")
+  def test_email(to)
+    mail(to: to, subject: "テスト", body: "テストですよ")
   end
 end
